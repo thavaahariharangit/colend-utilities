@@ -1,0 +1,48 @@
+{
+  "name": "@colend-contract-helpers",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "license": "MIT",
+  "description": "",
+  "scripts": {
+    "clean": "cd ../.. && npx rimraf packages/contract-helpers/dist packages/math-utils/*.log*",
+    "lint": "cd ../.. && eslint packages/contract-helpers/src/**/*.ts",
+    "check-types": "yarn build -- --noEmit",
+    "prebuild": "npm run clean",
+    "build": "cd ../.. && tsc -p packages/contract-helpers/tsconfig.json && tsc -p packages/contract-helpers/tsconfig.json --module commonjs --outDir ./packages/contract-helpers/dist/cjs",
+    "test": "cd ../.. && yarn test packages/contract-helpers",
+    "test:watch": "cd ../.. && yarn test --watch packages/contract-helpers",
+    "cover": "cd ../.. && yarn cover packages/contract-helpers",
+    "commit": "cd ../.. && yarn commit",
+    "prepublishOnly": "yarn build"
+  },
+  "peerDependencies": {
+    "bignumber.js": "^9.x",
+    "ethers": "^5.x",
+    "reflect-metadata": "^0.1.x",
+    "tslib": "^2.4.x"
+  },
+  "devDependencies": {
+    "ethers": "5.4.7",
+    "reflect-metadata": "^0.1.13"
+  },
+  "dependencies": {
+    "isomorphic-unfetch": "^3.1.0"
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sotatek-VanPham/colend-utilities.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Sotatek-VanPham/colend-utilities.git/issues"
+  },
+  "homepage": "https://github.com/Sotatek-VanPham/colend-utilities.git#readme",
+  "gitHead": "47a9a6d1f940185ab1e7f6c2bea61564b2abe47a",
+  "publishConfig": {
+    "access": "public"
+  }
+}
