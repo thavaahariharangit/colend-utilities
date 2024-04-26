@@ -1,5 +1,5 @@
 {
-  "name": "@colend-contract-helpers",
+  "name": "colend-contract-helpers",
   "version": "1.0.0",
   "sideEffects": false,
   "license": "MIT",
